@@ -33,7 +33,7 @@ from __future__ import print_function
 import random
 import os.path              
     
-import example0, example1, example2, example3
+import example0, example1, example2, example3, teamPizzo
 import example4, example5, example6, example7
 import team0, team1, team2, team3, team4
 import team5, team6, team7, team8, team9
@@ -41,9 +41,7 @@ import team10, team11, team12, team13, team14
 betray = example1
 collude = example0
 
-modules = [example0, example1, example2, example3, example4, example5, example6, example7,
-team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
-team11, team12, team13, team14]
+modules = [example0, example1, example2, example3, teamPizzo]
 for module in modules:
     reload(module)
     print ('reloaded',module)
@@ -124,8 +122,8 @@ def play_round(player1, player2, score1, score2, moves1, moves2):
     Returns a 2-tuple with score1 and score2 incremented by this round
     '''
     
-    RELEASE = 0 # (R, "reward" in literature) when both players collude
-    TREAT = 100 # (T, "temptation" in literature) when you betray your partner
+    RELEASE = 250 # (R, "reward" in literature) when both players collude
+    TREAT = 500 # (T, "temptation" in literature) when you betray your partner
     SEVERE_PUNISHMENT = -500 # (S, "sucker" in literature) when your partner betrays you
     PUNISHMENT = -250 # (P) when both players betray each other
     
